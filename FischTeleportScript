@@ -1,0 +1,89 @@
+-- Ölünce Butonlar Yok olur Tekrar Execute yap Ölünce
+-- If you die the buttons disappears Execute Again when you are dead
+
+local plr = game.Players.LocalPlayer
+local chr = plr.Character
+local Humanoid = chr:FindFirstChild("Humanoid")
+local rootpart = chr:FindFirstChild("HumanoidRootPart")
+local AntikAda = CFrame.new(5792.79004, 135.301498, 403.407928, 0.99288857, 6.16207474e-10, 0.119047515, -5.94000071e-10, 1, -2.22025495e-10, -0.119047515, 1.49732338e-10, 0.99288857)
+local Sunstone = CFrame.new(-922.174866, 134.437958, -1122.16003, 0.895287275, -4.50051196e-08, -0.445489287, 2.12315712e-08, 1, -5.83555355e-08, 0.445489287, 4.27865317e-08, 0.895287275)
+local TerkEdilmisK = CFrame.new(-2676.47339, 131.500336, 1824.2594, -0.831271172, 5.82927875e-08, -0.555867076, 3.6580591e-08, 1, 5.01637842e-08, 0.555867076, 2.13657607e-08, -0.831271172)
+local Snowcap = CFrame.new(2626.15576, 141.783829, 2454.03516, 0.988757193, -1.45997916e-08, 0.149530143, 6.01206418e-09, 1, 5.78834509e-08, -0.149530143, -5.63336897e-08, 0.988757193)
+
+local ParentGui = game.CoreGui
+local ScreenGui = Instance.new("ScreenGui")
+local TextButton1 = Instance.new("TextButton")
+local TextButton2 = Instance.new("TextButton")
+local TextButton3 = Instance.new("TextButton")
+local TextButton4 = Instance.new("TextButton")
+
+ScreenGui.Parent = ParentGui
+
+TextButton1.Name = "T1"
+TextButton2.Name = "T2"
+TextButton3.Name = "T3"
+TextButton4.Name = "T4"
+
+
+
+TextButton1.Parent = ScreenGui
+TextButton2.Parent = ScreenGui
+TextButton3.Parent = ScreenGui
+TextButton4.Parent = ScreenGui
+
+TextButton1:TweenPosition(UDim2.new(0,144,0,50),"Out","Sine",1)
+TextButton1:TweenSize(UDim2.new(0,70,0,70),"Out","Sine",1)
+TextButton1.BackgroundTransparency = 0.6
+TextButton1.TextTransparency = 0.2
+
+TextButton2:TweenPosition(UDim2.new(0,50,0,50),"Out","Sine",1)
+TextButton2:TweenSize(UDim2.new(0,70,0,70),"Out","Sine",1)
+TextButton2.BackgroundTransparency = 0.6
+TextButton2.TextTransparency = 0.2
+
+TextButton3:TweenPosition(UDim2.new(0,233,0,50),"Out","Sine",1)
+TextButton3:TweenSize(UDim2.new(0,70,0,70),"Out","Sine",1)
+TextButton3.BackgroundTransparency = 0.6
+TextButton3.TextTransparency = 0.2
+
+TextButton4:TweenPosition(UDim2.new(0,320,0,50),"Out","Sine",1)
+TextButton4:TweenSize(UDim2.new(0,70,0,70),"Out","Sine",1)
+TextButton4.BackgroundTransparency = 0.6
+TextButton4.TextTransparency = 0.2
+
+TextButton1.Text = "Antik Ada"
+TextButton2.Text = "Sunstone"
+TextButton3.Text = "Terk Edilmiş K"
+TextButton4.Text = "Snowcap"
+
+
+TextButton1.TextScaled = true
+TextButton2.TextScaled = true
+TextButton3.TextScaled = true
+TextButton4.TextScaled = true
+
+TextButton1.MouseButton1Click:Connect(function()
+rootpart.CFrame = AntikAda
+
+end)
+
+TextButton2.MouseButton1Click:Connect(function()
+rootpart.CFrame = Sunstone
+
+end)
+
+TextButton3.MouseButton1Click:Connect(function()
+rootpart.CFrame = TerkEdilmisK
+end)
+
+TextButton4.MouseButton1Click:Connect(function()
+rootpart.CFrame = Snowcap
+end)
+
+while wait(1) do
+if Humanoid.Health == 0 then
+ScreenGui:Destroy()
+end
+end
+-- Ölünce Butonlar Yok Olur Tekrar Execute yap Ölünce
+-- If you die the buttons disappears Execute Again when you are dead
